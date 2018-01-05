@@ -1,0 +1,36 @@
+
+entity UserSetting {
+	name String
+}
+
+
+
+
+entity User {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant,
+	salary Long,
+	commissionPct Long
+}
+
+
+/
+
+relationship OneToOne {
+	UserSetting{user} to User
+}
+
+
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+// Set an angular suffix
+angularSuffix * with mySuffix
